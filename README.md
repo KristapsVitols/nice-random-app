@@ -15,3 +15,17 @@ docker run --rm \
     laravelsail/php82-composer:latest \
     composer install --ignore-platform-reqs
 ```
+4. Build and start up docker containers: `vendor/bin/sail up -d`
+5. Connect to shell (sail): `vendor/bin/sail shell`
+6. Within the shell, run migrations: `php artisan migrate`
+7. Within the shell, run seeders: `php artisan db:seed`
+
+### API endpoints:
+1. **GET** http://localhost/api/clients/{id}/accounts
+2. **GET** http://localhost/api/accounts/{id}/transactions (`offset` and `limit` parameters available)
+3. **POST** http://localhost/api/transfer-funds
+   Required parameters:
+   - (int) accountIdFrom
+   - (int) accountIdTo
+   - (int/float) amount
+   - (string) currency
