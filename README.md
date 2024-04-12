@@ -1,4 +1,4 @@
-## Nice random app, built with Laravel
+## Nice random app (, built with Laravel
 
 ### Prerequisites:
 1. Have Docker installed.
@@ -29,6 +29,9 @@ docker run --rm \
    - (int) **accountIdTo**
    - (int/float) **amount**
    - (string) **currency**
+
+**IMPORTANT**
+This app uses https://exchangerate.host/ API for currency conversion. It has free version, so just get an API key and add it in the .env file to the `CURRENCY_EXCHANGE_API_KEY` variable
 
 ### Running tests:
 Within sail shell, run `vendor/bin/phpunit`
