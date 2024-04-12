@@ -1,7 +1,7 @@
 ## Nice random app (list client accounts, list account transactions, transfer funds via client accounts), built with Laravel
 
 ### Prerequisites:
-1. Have Docker installed.
+1. Have Docker Desktop installed.
 
 ### Setup guide:
 1. Clone the repository: `git clone https://github.com/KristapsVitols/nice-random-app.git`
