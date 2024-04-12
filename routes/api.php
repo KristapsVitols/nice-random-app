@@ -1,6 +1,8 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Controllers\ApiController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/api/clients', fn () => response()->json(['hello' => 123]));
+Route::get('/clients/{clientId}/accounts', [ApiController::class, 'getClientAccounts']);
+Route::get('/accounts/{accountId}/transactions', [ApiController::class, 'getAccountTransactions']);
+Route::post('/transfer-funds', [ApiController::class, 'transferFunds']);

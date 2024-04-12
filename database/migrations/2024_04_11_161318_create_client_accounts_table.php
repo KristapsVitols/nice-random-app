@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('client_accounts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('client_id')->constrained();
+            $table->float('balance');
+            $table->string('currency');
             $table->timestamps();
         });
     }
