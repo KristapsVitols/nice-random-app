@@ -29,3 +29,6 @@ docker run --rm \
    - (int) **accountIdTo**
    - (int/float) **amount**
    - (string) **currency**
+
+### Running tests:
+Within sail shell, run `vendor/bin/phpunit`
