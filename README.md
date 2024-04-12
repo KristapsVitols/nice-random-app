@@ -5,8 +5,9 @@
 
 ### Setup guide:
 1. Clone the repository: `git clone https://github.com/KristapsVitols/nice-random-app.git`
-2. Copy .env.exmaple file: `cp .env.example .env`
-3. To avoid having to install PHP/composer locally, run this command:
+2. Go into the project folder: `cd nice-random-app`
+3. Copy .env.exmaple file: `cp .env.example .env`
+4. To avoid having to install PHP/composer locally, run this command:
 ```
 docker run --rm \
     -u "$(id -u):$(id -g)" \
