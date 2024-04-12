@@ -30,7 +30,7 @@ docker run --rm \
    - (int/float) **amount**
    - (string) **currency**
 
-**IMPORTANT**
+**!!IMPORTANT!!**
 This app uses https://exchangerate.host/ API for currency conversion. It has free version, so just get an API key and add it in the .env file to the `CURRENCY_EXCHANGE_API_KEY` variable
 
 ### Running tests:
