@@ -21,11 +21,11 @@ docker run --rm \
 7. Within the shell, run seeders: `php artisan db:seed`
 
 ### API endpoints:
-1. **GET** http://localhost/api/clients/{id}/accounts
-2. **GET** http://localhost/api/accounts/{id}/transactions (`offset` and `limit` parameters available)
+1. **GET** http://localhost/api/clients/{clientId}/accounts
+2. **GET** http://localhost/api/accounts/{accountId}/transactions (`offset` and `limit` parameters available)
 3. **POST** http://localhost/api/transfer-funds
    Required parameters:
-   - (int) accountIdFrom
-   - (int) accountIdTo
-   - (int/float) amount
-   - (string) currency
+   - (int) **accountIdFrom**
+   - (int) **accountIdTo**
+   - (int/float) **amount**
+   - (string) **currency**
