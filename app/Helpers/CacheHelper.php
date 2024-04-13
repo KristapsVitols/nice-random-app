@@ -17,4 +17,9 @@ class CacheHelper
     {
         return Cache::set($key, $value, $ttl);
     }
+
+    public function has(string $key): bool
+    {
+        return Cache::has($key);
+    }
 }

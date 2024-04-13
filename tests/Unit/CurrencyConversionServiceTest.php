@@ -37,6 +37,7 @@ class CurrencyConversionServiceTest extends TestCase
     {
         $this->expectNotToPerformAssertions();
 
+        $this->mockedCache->shouldReceive('has')->andReturnTrue();
         $this->mockedCache->shouldReceive('get')->andReturn(['EURUSD' => 1.05]);
         $this->service->convert('EUR', 'USD', 125);
     }
@@ -47,7 +48,7 @@ class CurrencyConversionServiceTest extends TestCase
 
         $rates = ['EURUSD' => 1.05];
 
-        $this->mockedCache->shouldReceive('get')->andReturn(null);
+        $this->mockedCache->shouldReceive('has')->andReturnFalse();
         $this->mockedApi->shouldReceive('getRates')->andReturn($rates);
         $this->mockedCache->shouldReceive('set')->withArgs(['EUR', $rates, 60 * 60 * 24]);
 
@@ -56,7 +57,7 @@ class CurrencyConversionServiceTest extends TestCase
 
     public function testConvertWithRatesRetrievalFailingThrowsException()
     {
-        $this->mockedCache->shouldReceive('get')->andReturn(null);
+        $this->mockedCache->shouldReceive('has')->andReturnFalse();
         $this->mockedCache->shouldReceive('set');
         $this->mockedApi->shouldReceive('getRates')->andReturn([]);
 
@@ -70,7 +71,7 @@ class CurrencyConversionServiceTest extends TestCase
         $rates = ['EURUSD' => 1.05];
         $expectedAmount = round(100 * $rates['EURUSD'], 2);
 
-        $this->mockedCache->shouldReceive('get')->andReturn(null);
+        $this->mockedCache->shouldReceive('has')->andReturnFalse();
         $this->mockedApi->shouldReceive('getRates')->andReturn($rates);
         $this->mockedCache->shouldReceive('set')->withArgs(['EUR', $rates, 60 * 60 * 24]);
 

@@ -35,10 +35,8 @@ class CurrencyConversionService
 
     private function getRates(string $currency): array
     {
-        $cachedRates = $this->cache->get($currency);
-
-        if ($cachedRates) {
-            return $cachedRates;
+        if ($this->cache->has($currency)) {
+            return $this->cache->get($currency);
         }
 
         // Ideally, we would pre-warm cache/persist the data in a table via daily/hourly cron
