@@ -1,4 +1,4 @@
-## Nice random app (list client accounts, list account transactions, transfer funds via client accounts), built with Laravel
+## Nice random app (list client accounts, list account transactions, transfer funds between client accounts), built with Laravel
 
 ### Prerequisites:
 1. Have Docker Desktop installed.
